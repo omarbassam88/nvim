@@ -86,6 +86,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvcode-color-schemes.vim"
   },
+  ["nvim-lspconfig"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-lspconfig"
+  },
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,

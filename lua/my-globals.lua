@@ -12,3 +12,6 @@ O = {
     nvim_tree_disable_netrw = 0, -- "1 by default, disables netrw (must be set before plugin's packadd)
 
 }
+
+DATA_PATH = vim.fn.stdpath('data')
+CACHE_PATH = vim.fn.stdpath('cache')

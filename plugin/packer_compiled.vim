@@ -71,10 +71,25 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/barbar.nvim"
+  },
+  ["galaxyline.nvim"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/galaxyline.nvim"
+  },
   ["nvcode-color-schemes.vim"] = {
     loaded = false,
     needs_bufread = false,
     path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvcode-color-schemes.vim"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,

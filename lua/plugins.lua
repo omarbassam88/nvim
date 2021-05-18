@@ -36,9 +36,25 @@ return require("packer").startup(
         -- Packer can manage itself as an optional plugin
         use "wbthomason/packer.nvim"
 
+        --[[
+            UI
+        ]]--
+
         -- Color
         use {"christianchiarulli/nvcode-color-schemes.vim", opt = true}
-
         require_plugin("nvcode-color-schemes.vim")
+
+        -- Icons
+        use {"kyazdani42/nvim-web-devicons", opt = true}
+        require_plugin("nvim-web-devicons")
+        -- Status line
+        use {"glepnir/galaxyline.nvim", opt = true}
+        require_plugin("galaxyline.nvim")
+
+        -- Buffer Line
+        use {"romgrk/barbar.nvim", opt = true}
+        require_plugin("barbar.nvim")        
 end
 )
+
+

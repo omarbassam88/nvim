@@ -53,7 +53,15 @@ return require("packer").startup(
 
         -- Buffer Line
         use {"romgrk/barbar.nvim", opt = true}
-        require_plugin("barbar.nvim")        
+        require_plugin("barbar.nvim")
+
+        --[[
+            Explorer        
+        ]]--
+
+        -- nvim tree
+        use {"kyazdani42/nvim-tree.lua", opt = true}
+        require_plugin("nvim-tree.lua")
 
         --[[
             LSP

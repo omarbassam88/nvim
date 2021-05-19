@@ -10,6 +10,15 @@ O = {
     shell = 'bash',
 	timeoutlen = 100,
     nvim_tree_disable_netrw = 0, -- "1 by default, disables netrw (must be set before plugin's packadd)
+    
+    -- @usage pass a table with your desired languages
+    treesitter = {
+        ensure_installed = "all",
+        ignore_install = {"haskell"},
+        highlight = {enabled = true},
+        playground = {enabled = true},
+        rainbow = {enabled = false}
+    },
 
 }
 

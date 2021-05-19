@@ -56,8 +56,27 @@ return require("packer").startup(
         require_plugin("barbar.nvim")
 
         --[[
-            Explorer        
-        ]]--
+            Git Intergration
+        --]]
+
+        use {
+          'lewis6991/gitsigns.nvim',
+          requires = {
+            'nvim-lua/plenary.nvim'
+          }
+        }
+        require_plugin("gitsigns.nvim")
+
+        --[[
+            Treesitter
+        --]]
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        require_plugin("nvim-treesitter")
+        use {"windwp/nvim-ts-autotag", opt = true}
+        require_plugin("nvim-ts-autotag")
+        --[[
+            Explorer
+        --]]
 
         -- nvim tree
         use {"kyazdani42/nvim-tree.lua", opt = true}
@@ -89,7 +108,7 @@ return require("packer").startup(
 
         use {"rafamadriz/friendly-snippets", opt = true}
         require_plugin("friendly-snippets")
-        
+
         -- Auto Pairs
         use {"windwp/nvim-autopairs", opt = true}
         require_plugin("nvim-autopairs")

@@ -1,4 +1,3 @@
-
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
@@ -55,18 +54,32 @@ return require("packer").startup(
         use {"romgrk/barbar.nvim", opt = true}
         require_plugin("barbar.nvim")
 
+        -- Dashboard
+        use {"ChristianChiarulli/dashboard-nvim", opt = true}
+        require_plugin("dashboard-nvim")
+
+        -- Which Key
+        use {"folke/which-key.nvim", opt = true}
+        require_plugin("which-key.nvim")
+
         --[[
             Git Intergration
         --]]
 
-        use {
-          'lewis6991/gitsigns.nvim',
-          requires = {
-            'nvim-lua/plenary.nvim'
-          }
-        }
+        use {"lewis6991/gitsigns.nvim", opt = true}
         require_plugin("gitsigns.nvim")
 
+        -- Telescope
+        use {"nvim-lua/popup.nvim", opt = true}
+        require_plugin("popup.nvim")
+        use {"nvim-lua/plenary.nvim", opt = true}
+        require_plugin("plenary.nvim")
+        use {"nvim-telescope/telescope.nvim", opt = true}
+        require_plugin("telescope.nvim")
+        use {"nvim-telescope/telescope-fzy-native.nvim", opt = true}
+
+        -- Debugging
+        use {"mfussenegger/nvim-dap", opt = true}
         --[[
             Treesitter
         --]]

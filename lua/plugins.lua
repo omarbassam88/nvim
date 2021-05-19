@@ -89,6 +89,14 @@ return require("packer").startup(
 
         use {"rafamadriz/friendly-snippets", opt = true}
         require_plugin("friendly-snippets")
+        
+        -- Auto Pairs
+        use {"windwp/nvim-autopairs", opt = true}
+        require_plugin("nvim-autopairs")
+
+        -- Comment
+        use {"terrortylor/nvim-comment", opt = true}
+        require_plugin("nvim-comment")
 
 end
 )

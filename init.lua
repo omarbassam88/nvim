@@ -7,6 +7,8 @@ require('colorscheme') -- This plugin must be required somewhere after nvimtree.
 require('keymappings')
 require('o-galaxyline')
 require('o-compe')
+require('o-comment')
+require('o-autopairs')
 
 -- LSP
 require('lsp')

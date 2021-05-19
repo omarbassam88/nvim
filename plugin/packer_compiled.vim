@@ -112,6 +112,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-lspinstall"
   },
+  ["nvim-tree.lua"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/omar/.local/share/nvim/site/pack/packer/opt/nvim-tree.lua"
+  },
   ["nvim-web-devicons"] = {
     loaded = false,
     needs_bufread = false,

@@ -65,9 +65,23 @@ return require("packer").startup(
 
         use {"glepnir/lspsaga.nvim", opt = true}
         require_plugin("lspsaga.nvim")
+
         use {"kabouzeid/nvim-lspinstall", opt = true}
         require_plugin("nvim-lspinstall")
+
+        --[[
+            AutoComplete
+        ]]--
+
+        use {"hrsh7th/nvim-compe", opt = true}
+        require_plugin("nvim-compe")
+
+        use {"hrsh7th/vim-vsnip", opt = true}
+        require_plugin("vim-vsnip")
+
+        use {"rafamadriz/friendly-snippets", opt = true}
+        require_plugin("friendly-snippets")
+
 end
 )
-
 

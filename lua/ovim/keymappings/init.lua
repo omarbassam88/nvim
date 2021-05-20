@@ -1,5 +1,5 @@
 
-vim.api.nvim_set_keymap('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
+Map('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
 
 -- better window movement
 Map('n', '<C-h>', '<C-w>h', {silent = true})
@@ -21,8 +21,7 @@ vim.cmd([[
   tnoremap <Esc> <C-\><C-n>
 ]])
 
--- TODO fix this
--- resize with arrows
+-- resize windows with arrows
 Map('n', '<C-Up>', ':resize -2<CR>', {silent = true})
 Map('n', '<C-Down>', ':resize +2<CR>', {silent = true})
 Map('n', '<C-Left>', ':vertical resize -2<CR>', {silent = true})
@@ -48,13 +47,5 @@ Map('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
--- vim.cmd('inoremap <expr> <TAB> (\"\\<C-n>\")')
--- vim.cmd('inoremap <expr> <S-TAB> (\"\\<C-p>\")')
 
 
--- vim.cmd([[
--- map p <Plug>(miniyank-autoput)
--- map P <Plug>(miniyank-autoPut)
--- map <leader>n <Plug>(miniyank-cycle)
--- map <leader>N <Plug>(miniyank-cycleback)
--- ]])

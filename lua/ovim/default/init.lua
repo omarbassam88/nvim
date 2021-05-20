@@ -2,7 +2,7 @@
 O = {
     auto_close_tree = 0,
     auto_complete = true,
-    colorscheme = 'lunar',
+    colorscheme = 'onedark',
     hidden_files = true,
     wrap_lines = true,
     number = true,
@@ -29,12 +29,11 @@ O = {
                    ' ██║   ██║╚════╝╚██╗ ██╔╝██║██║╚██╔╝██║',
                    ' ╚██████╔╝       ╚████╔╝ ██║██║ ╚═╝ ██║',
                    '  ╚═════╝         ╚═══╝  ╚═╝╚═╝     ╚═╝'
-                                      
 		},
 		footer= {'Omar Bassam'}
 	}
 
 }
 
-DATA_PATH = vim.fn.stdpath('data')
-CACHE_PATH = vim.fn.stdpath('cache')
+DATA_PATH = Fn.stdpath('data')
+CACHE_PATH = Fn.stdpath('cache')

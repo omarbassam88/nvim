@@ -1,24 +1,32 @@
 -- Essential Setup
-require('my-globals')
-require('settings')
+-- Utility Functions
+require('ovim.utils')
+
+-- Default settings
+require('ovim.globals')
+require('ovim.settings')
+
 require('plugins')
 require('nvim-tree')
 require('colorscheme') -- This plugin must be required somewhere after nvimtree. Placing it before will break navigation keymappings
-require('keymappings')
-require('o-galaxyline')
-require('o-dashboard')
-require("o-telescope")
-require("o-treesitter")
-require("o-whichkey")
-require('o-compe')
-require('o-comment')
+require('plugins.galaxyline')
+require('plugins.dashboard')
+require("plugins.telescope")
+require("plugins.treesitter")
+require("plugins.whichkey")
+require('plugins.compe')
+require('plugins.comment')
 
-require("o-gitsigns")
+require("plugins.gitsigns")
 
-require('o-autopairs')
+require('plugins.autopairs')
 -- LSP
 require('lsp')
-require('o-lspinstall')
+require('plugins.lspinstall')
 require('lsp.lua-ls')
 
+-- Load keymappings
+require('ovim.keymappings')
 
+-- Extra Message to confirm that everything loaded.
+print("O-Vim Loaded Successfully")

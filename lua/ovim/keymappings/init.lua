@@ -2,10 +2,10 @@
 vim.api.nvim_set_keymap('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
 
 -- better window movement
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+Map('n', '<C-h>', '<C-w>h', {silent = true})
+Map('n', '<C-j>', '<C-w>j', {silent = true})
+Map('n', '<C-k>', '<C-w>k', {silent = true})
+Map('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- TODO fix this
 -- Terminal window navigation
@@ -23,27 +23,27 @@ vim.cmd([[
 
 -- TODO fix this
 -- resize with arrows
-vim.api.nvim_set_keymap('n', '<C-Up>', ':resize -2<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-Down>', ':resize +2<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-Left>', ':vertical resize -2<CR>', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-Right>', ':vertical resize +2<CR>', {silent = true})
+Map('n', '<C-Up>', ':resize -2<CR>', {silent = true})
+Map('n', '<C-Down>', ':resize +2<CR>', {silent = true})
+Map('n', '<C-Left>', ':vertical resize -2<CR>', {silent = true})
+Map('n', '<C-Right>', ':vertical resize +2<CR>', {silent = true})
 
 -- better indenting
-vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+Map('v', '<', '<gv', {noremap = true, silent = true})
+Map('v', '>', '>gv', {noremap = true, silent = true})
 
 -- I hate escape
-vim.api.nvim_set_keymap('i', 'jk', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'kj', '<ESC>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'jj', '<ESC>', {noremap = true, silent = true})
+Map('i', 'jk', '<ESC>', {noremap = true, silent = true})
+Map('i', 'kj', '<ESC>', {noremap = true, silent = true})
+Map('i', 'jj', '<ESC>', {noremap = true, silent = true})
 
 -- Tab switch buffer
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+Map('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
+Map('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
 
 -- Move selected line / block of text in visual mode
-vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
+Map('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
+Map('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Better nav for omnicomplete
 vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')

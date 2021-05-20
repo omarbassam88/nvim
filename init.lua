@@ -3,7 +3,7 @@
 require('ovim.utils')
 
 -- Default settings
-require('ovim.globals')
+require('ovim.default')
 require('ovim.settings')
 
 require('plugins')

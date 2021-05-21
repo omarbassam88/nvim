@@ -27,6 +27,6 @@ require('lsp.lua-ls')
 
 -- Load keymappings
 require('ovim.keymappings')
-
+require('surround')
 -- Extra Message to confirm that everything loaded.
 print("O-Vim Loaded Successfully")

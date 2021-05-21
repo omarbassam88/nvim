@@ -1,15 +1,20 @@
- local plugins_list = {
-        --[[
-            UI
-        ]]--
-        -- Color
-        ['nvcode-color-schemes.vim'] = {
-                                    "christianchiarulli/nvcode-color-schemes.vim", 
-                                    opt = true },
-
-
         -- Icons
-        ['nvim-web-devicons'] = {"kyazdani42/nvim-web-devicons", opt = true},
+ local plugins_list = {
+        --[[------------]]--
+        --      UI        --
+        --[[------------]]--
+
+        -- Color
+        ['nvcode-color-schemes.vim'] = { "christianchiarulli/nvcode-color-schemes.vim", opt = true },
+
+        ['indent-blankline.nvim'] = {"lukas-reineke/indent-blankline.nvim", branch = 'lua' },
+        ['surround.nvim'] = { "blackCauldron7/surround.nvim",
+                              config = function()
+                                require "surround".setup {}
+                              end
+                            },
+
+        ['nvim-web-devicons']    = {"kyazdani42/nvim-web-devicons", opt = true},
         -- Status line
         ['galaxyline.nvim'] = {"glepnir/galaxyline.nvim", opt = true},
 
@@ -76,8 +81,7 @@
         -- Comment
         ['nvim-comment'] = {"terrortylor/nvim-comment", opt = true},
 
-
- }
+}
 
 
 -- Default path for installing plugins
@@ -89,7 +93,7 @@ if Fn.empty(Fn.glob(install_path)) > 0 then
     Execute "packadd packer.nvim"
 end
 
--- --- Helper Function
+--- Helper Function
 --- Check if a file or directory exists in this path
 local function require_plugin(plugin)
     local plugin_prefix = Fn.stdpath("data") .. "/site/pack/packer/opt/"

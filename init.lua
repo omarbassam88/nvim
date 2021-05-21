@@ -7,7 +7,7 @@ require('ovim.default')
 require('ovim.settings')
 
 require('plugins')
-require('nvim-tree')
+-- require('nvim-tree')
 require('colorscheme') -- This plugin must be required somewhere after nvimtree. Placing it before will break navigation keymappings
 require('plugins.configs.galaxyline')
 require('plugins.configs.dashboard')

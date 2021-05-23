@@ -1,6 +1,8 @@
 
 Map('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
-
+--]]--------------------[[--
+--    Window Management   --
+--]]--------------------[[--
 -- better window movement
 Map('n', '<C-h>', '<C-w>h', {silent = true})
 Map('n', '<C-j>', '<C-w>j', {silent = true})
@@ -9,7 +11,7 @@ Map('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- TODO fix this
 -- Terminal window navigation
-vim.cmd([[
+Cmd([[
   tnoremap <C-h> <C-\><C-N><C-w>h
   tnoremap <C-j> <C-\><C-N><C-w>j
   tnoremap <C-k> <C-\><C-N><C-w>k
@@ -45,7 +47,7 @@ Map('x', 'K', ':move \'<-2<CR>gv-gv', {noremap = true, silent = true})
 Map('x', 'J', ':move \'>+1<CR>gv-gv', {noremap = true, silent = true})
 
 -- Better nav for omnicomplete
-vim.cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
-vim.cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
+Cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
+Cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 

@@ -59,12 +59,13 @@
         ]]--
 
         --nvim-lspconfig
-        ['nvim-lspconfig'] =  {"neovim/nvim-lspconfig", opt = true},
+        ['nvim-lspconfig'] =  {"neovim/nvim-lspconfig"},
 
         ['lspsaga.nvim'] =  {"glepnir/lspsaga.nvim", opt = true},
 
         ['nvim-lspinstall'] = {"kabouzeid/nvim-lspinstall", opt = true},
-
+        ['lsp_signature.nvim'] = {"ray-x/lsp_signature.nvim", opt = true},
+['lspkind-nvim'] = {"onsails/lspkind-nvim", opt = true},
         --[[
             AutoComplete
         ]]--
@@ -81,6 +82,8 @@
         -- Comment
         ['nvim-comment'] = {"terrortylor/nvim-comment", opt = true},
 
+        -- Format
+        ['format.nvim'] = {"lukas-reineke/format.nvim"}
 }
 
 

@@ -13,7 +13,6 @@ require('plugins.configs.galaxyline')
 require('plugins.configs.dashboard')
 require("plugins.configs.telescope")
 require("plugins.configs.treesitter")
-require("plugins.configs.whichkey")
 require('plugins.configs.compe')
 require('plugins.configs.comment')
 require('plugins.configs.format')
@@ -30,6 +29,7 @@ require('lsp.python-ls')
 
 -- Load keymappings
 require('ovim.keymappings')
+require("plugins.configs.whichkey")
 require('surround')
 -- Extra Message to confirm that everything loaded.
 print("O-Vim Loaded Successfully")

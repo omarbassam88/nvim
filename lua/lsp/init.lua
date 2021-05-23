@@ -130,7 +130,7 @@ local on_attach = function(client, bufnr)
 	Map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 	Map(
 		'n',
-		'<space>e',
+		'<space>le',
 		'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
 		opts
 	)

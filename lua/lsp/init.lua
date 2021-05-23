@@ -22,6 +22,7 @@ Fn.sign_define(
     {texthl = "LspDiagnosticsSignInformation", text ="" , numhl = "LspDiagnosticsSignInformation"}
 )
 
+-- Add Diagnostics as virtual text
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
  vim.lsp.diagnostic.on_publish_diagnostics, {
    virtual_text = {
@@ -91,49 +92,49 @@ local on_attach = function(client, bufnr)
 		'<cmd>lua vim.lsp.buf.implementation()<CR>',
 		opts
 	)
+	Map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 	Map(
 		'n',
 		'<C-k>',
 		'<cmd>lua vim.lsp.buf.signature_help()<CR>',
 		opts
 	)
-	Map(
-		'n',
-		'<space>wa',
-		'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
-		opts
-	)
-	Map(
-		'n',
-		'<space>wr',
-		'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
-		opts
-	)
-	Map(
-		'n',
-		'<space>wl',
-		'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
-		opts
-	)
-	Map(
-		'n',
-		'<space>D',
-		'<cmd>lua vim.lsp.buf.type_definition()<CR>',
-		opts
-	)
-	Map(
-		'n',
-		'<space>rn',
-		'<cmd>lua vim.lsp.buf.rename()<CR>',
-		opts
-	)
-	Map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-	Map(
-		'n',
-		'<space>le',
-		'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
-		opts
-	)
+	-- Map(
+	-- 	'n',
+	-- 	'<space>wa',
+	-- 	'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>',
+	-- 	opts
+	-- )
+	-- Map(
+	-- 	'n',
+	-- 	'<space>wr',
+	-- 	'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>',
+	-- 	opts
+	-- )
+	-- Map(
+	-- 	'n',
+	-- 	'<space>wl',
+	-- 	'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>',
+	-- 	opts
+	-- )
+	-- Map(
+	-- 	'n',
+	-- 	'<space>D',
+	-- 	'<cmd>lua vim.lsp.buf.type_definition()<CR>',
+	-- 	opts
+	-- )
+	-- Map(
+	-- 	'n',
+	-- 	'<space>rn',
+	-- 	'<cmd>lua vim.lsp.buf.rename()<CR>',
+	-- 	opts
+	-- )
+	-- Map(
+	-- 	'n',
+	-- 	'<space>le',
+	-- 	'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+	-- 	opts
+	-- )
 	Map(
 		'n',
 		'[d',
@@ -146,12 +147,12 @@ local on_attach = function(client, bufnr)
 		'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
 		opts
 	)
-	Map(
-		'n',
-		'<space>q',
-		'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
-		opts
-	)
+	-- Map(
+	-- 	'n',
+	-- 	'<space>q',
+	-- 	'<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>',
+	-- 	opts
+	-- )
 	-- Set some keybinds conditional on server capabilities
 	if client.resolved_capabilities.document_formatting then
 		Map(
@@ -172,9 +173,9 @@ local on_attach = function(client, bufnr)
 	if client.resolved_capabilities.document_highlight then
 		Api.nvim_exec(
 			[[
-        hi LspReferenceRead ctermbg=237 guibg=LightYellow
-        hi LspReferenceText ctermbg=237 guibg=LightYellow
-        hi LspReferenceWrite ctermbg=237 guibg=LightYellow
+        hi LspReferenceRead ctermbg=237 guibg=#464646
+        hi LspReferenceText ctermbg=237 guibg=#464646
+        hi LspReferenceWrite ctermbg=237 guibg=#464646
         augroup lsp_document_highlight
           autocmd! * <buffer>
           autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()

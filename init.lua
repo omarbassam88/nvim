@@ -16,10 +16,12 @@ require("plugins.configs.treesitter")
 require('plugins.configs.compe')
 require('plugins.configs.comment')
 require('plugins.configs.format')
+require('plugins.configs.colorizer')
 
 require("plugins.configs.gitsigns")
 
 require('plugins.configs.autopairs')
+require('plugins.configs.ts-rainbow')
 require("plugins.configs.indent-blankline")
 -- LSP
 require('lsp')
@@ -30,6 +32,5 @@ require('lsp.python-ls')
 -- Load keymappings
 require('ovim.keymappings')
 require("plugins.configs.whichkey")
-require('surround')
 -- Extra Message to confirm that everything loaded.
 print("O-Vim Loaded Successfully")

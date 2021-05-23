@@ -1,4 +1,10 @@
 
+-- Define leader key to space
+-- and call leader mapper
+Map('n', '<Space>', '<Nop>')
+Api.nvim_set_var('mapleader', ' ')
+
+-- TODO for Ranger Integration
 Map('n', '-', ':RnvimrToggle<CR>', {noremap = true, silent = true})
 --]]--------------------[[--
 --    Window Management   --
@@ -51,9 +57,6 @@ Cmd('inoremap <expr> <c-j> (\"\\<C-n>\")')
 Cmd('inoremap <expr> <c-k> (\"\\<C-p>\")')
 
 
--- Set leader
-Map('n', '<Space>', '<NOP>', {noremap = true, silent = true})
-vim.g.mapleader = ' '
 
 -- no hl
 Map('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
@@ -61,11 +64,6 @@ Map('n', '<Leader>h', ':set hlsearch!<CR>', {noremap = true, silent = true})
 -- explorer
 Map('n', '<Leader>e', ':NvimTreeToggle<CR>', { noremap = true, silent = true})
 
--- telescope
-Map('n', '<Leader>f', ':Telescope find_files<CR>', {noremap = true, silent = true})
-
--- dashboard
-Map('n', '<Leader>;', ':Dashboard<CR>', {noremap = true, silent = true})
 
 -- Comments
 Map("n", "<leader>/", ":CommentToggle<CR>", {noremap = true, silent = true})
@@ -89,10 +87,32 @@ local opts = {
 
 local mappings = {
     ["/"] = "Comment",
-    ["c"] = "Close Buffer",
     ["e"] = "Explorer",
-    ["f"] = "Find File",
     ["h"] = "No Highlight",
+    w = {
+        name = '+Window',
+        o = { ':only<CR>', 'Close all other windows' },
+        c = { ':close<CR>', 'Close current window' },
+        h = { ':split<CR>', 'Split horizontally' },
+        v = { ':vsplit<CR>', 'Split vertically' },
+    },
+    b = {
+        name = '+Buffer',
+        ['1'] = { ':BufferGoto 1<CR>', 'Buffer 1' },
+        ['2'] = { ':BufferGoto 2<CR>', 'Buffer 2' },
+        ['3'] = { ':BufferGoto 3<CR>', 'Buffer 3' },
+        ['4'] = { ':BufferGoto 4<CR>', 'Buffer 4' },
+        ['5'] = { ':BufferGoto 5<CR>', 'Buffer 5' },
+        ['6'] = { ':BufferGoto 6<CR>', 'Buffer 6' },
+        ['7'] = { ':BufferGoto 7<CR>', 'Buffer 7' },
+        ['8'] = { ':BufferGoto 8<CR>', 'Buffer 8' },
+        ['9'] = { ':BufferLast<CR>', 'Last buffer' },
+        c = { ':BufferClose<CR>', 'Close buffer' },
+        f = { ':FormatWrite<CR>', 'Format buffer' },
+        n = { ':BufferNext<CR>', 'Next buffer' },
+        i = { ':BufferPick<CR>', 'Pick buffer' },
+        p = { ':BufferPrevious<CR>', 'Previous buffer' },
+    },
     d = {
         name = "+Debug",
         b = {"<cmd>DebugToggleBreakpoint<cr>", "Toggle Breakpoint"},
@@ -103,18 +123,29 @@ local mappings = {
         s = {"<cmd>DebugStart<cr>", "Start"}
     },
     g = {
-        name = "+Git",
-        j = {"<cmd>NextHunk<cr>", "Next Hunk"},
-        k = {"<cmd>PrevHunk<cr>", "Prev Hunk"},
-        p = {"<cmd>PreviewHunk<cr>", "Preview Hunk"},
-        r = {"<cmd>ResetHunk<cr>", "Reset Hunk"},
-        R = {"<cmd>ResetBuffer<cr>", "Reset Buffer"},
-        s = {"<cmd>StageHunk<cr>", "Stage Hunk"},
-        u = {"<cmd>UndoStageHunk<cr>", "Undo Stage Hunk"},
-        o = {"<cmd>Telescope git_status<cr>", "Open changed file"},
-        b = {"<cmd>Telescope git_branches<cr>", "Checkout branch"},
-        c = {"<cmd>Telescope git_commits<cr>", "Checkout commit"},
-        C = {"<cmd>Telescope git_bcommits<cr>", "Checkout commit(for current file)"},
+        name = '+Git',
+        o = { ':LazyGit<CR>', 'Open LazyGit' },
+        P = { ':TermExec cmd="git pull"<CR>', 'Pull' },
+        p = { ':TermExec cmd="git push"<CR>', 'Push' },
+        S = { 'Stage hunk' },
+        s = { ':TermExec cmd="git status"<CR>', 'Status' },
+        u = { 'Undo stage hunk' },
+        R = { 'Reset buffer' },
+        r = { 'Reset hunk' },
+        h = { 'Preview hunk' },
+        b = { 'Blame line' },
+    },
+    f = {
+        name = '+File',
+        c = { ':e $MYVIMRC<CR>', 'Edit Neovim configuration' },
+        n = { 'Create a new unnamed buffer' },
+        f = { ':Telescope find_files<CR>', 'Find files' },
+        b = { ':Telescope marks<CR>', 'Bookmarks' },
+        W = { ':Telescope live_grep<CR>', 'Find word' },
+        t = { ':Telescope help_tags<CR>', 'Help tags' },
+        h = { ':Telescope oldfiles<CR>', 'Recently opened files' },
+        w = { ':SudaWrite<CR>', 'Write file with sudo permissions' },
+        r = { ':SudaRead<CR>', 'Re-open file with sudo permissions' },
     },
     l = {
         name = "+LSP",
@@ -134,6 +165,15 @@ local mappings = {
         s = {"<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols"},
         S = {"<cmd>Telescope lsp_workspace_symbols<cr>", "Workspace Symbols"}
     },
+    t = {
+        name = '+Toggle',
+        s = { ':Dashboard<CR>', 'Open start screen' },
+        c = { ':Telescope colorscheme<CR>', 'Change colorscheme' },
+        e = { ':NvimTreeToggle<CR>', 'Toggle Tree Explorer' },
+        m = { ':MinimapToggle<CR>', 'Toggle Minimap' },
+        S = { ':SymbolsOutline<CR>', 'Toggle Symbols view' },
+        t = { ':ToggleTerm<CR>', 'Toggle terminal' },
+    },
 
     s = {
         name = "+Search",
@@ -148,7 +188,11 @@ local mappings = {
         R = {"<cmd>Telescope registers<cr>", "Registers"},
         t = {"<cmd>Telescope live_grep<cr>", "Text"}
     },
-    S = {name = "+Session", s = {"<cmd>SessionSave<cr>", "Save Session"}, l = {"<cmd>SessionLoad<cr>", "Load Session"}}
+    S = {
+        name = "+Session",
+        s = {"<cmd>SessionSave<cr>", "Save Session"},
+        l = {"<cmd>SessionLoad<cr>", "Load Session"}
+    },
 }
 
 local wk = require("which-key")

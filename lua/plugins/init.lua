@@ -1,89 +1,119 @@
-        -- Icons
  local plugins_list = {
-        --[[------------]]--
-        --      UI        --
-        --[[------------]]--
 
-        -- Color
-        ['nvcode-color-schemes.vim'] = { "christianchiarulli/nvcode-color-schemes.vim", opt = true },
+    --[[------------]]--
+    --   Essentials   --
+    --[[------------]]--
 
-        ['indent-blankline.nvim'] = {"lukas-reineke/indent-blankline.nvim", branch = 'lua' },
-        ['surround.nvim'] = { "blackCauldron7/surround.nvim",
-                              config = function()
-                                require "surround".setup {}
-                              end
-                            },
+    -- Treesitter
+    ['nvim-treesitter'] = {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
+    -- Use treesitter to autoclose and autorename html tag
+    ['nvim-ts-autotag'] = {"windwp/nvim-ts-autotag", opt = true},
 
-        ['nvim-web-devicons']    = {"kyazdani42/nvim-web-devicons", opt = true},
-        -- Status line
-        ['galaxyline.nvim'] = {"glepnir/galaxyline.nvim", opt = true},
+    --[[------------]]--
+    --      UI        --
+    --[[------------]]--
 
-        -- Buffer Line
-        ['barbar.nvim'] = {"romgrk/barbar.nvim", opt = true},
+    -- Web-DevIcons
+    ['nvim-web-devicons']    = {"kyazdani42/nvim-web-devicons", opt = true},
 
-        -- Dashboard
-        ['dashboard-nvim'] = {"ChristianChiarulli/dashboard-nvim", opt = true},
+    -- Dashboard
+    ['dashboard-nvim'] = {"ChristianChiarulli/dashboard-nvim", opt = true},
 
-        -- Which Key
-        ['which-key.nvim'] = {"folke/which-key.nvim", opt = true},
+    -- Color Schemes
+    ['nvcode-color-schemes.vim'] = { "christianchiarulli/nvcode-color-schemes.vim", opt = true },
 
-        --[[
-            Git Intergration
-        --]]
+    -- nvim tree
+    ['nvim-tree.lua'] =  {"kyazdani42/nvim-tree.lua", opt = true},
 
-        ['gitsigns.nvim'] = {"lewis6991/gitsigns.nvim", opt = true},
+    -- Status line
+    ['galaxyline.nvim'] = {"glepnir/galaxyline.nvim", opt = true},
 
-        -- Telescope
-        ['popup.nvim'] = {"nvim-lua/popup.nvim", opt = true},
-        ['plenary.nvim'] = {"nvim-lua/plenary.nvim", opt = true},
-        ['telescope.nvim'] = {"nvim-telescope/telescope.nvim", opt = true},
-        ['telescope-fzy-native.nvim'] = {"nvim-telescope/telescope-fzy-native.nvim", opt = true},
+    -- Tab Bar
+    ['barbar.nvim'] = {"romgrk/barbar.nvim", opt = true},
 
-        -- Debugging
-        ['nvim-dap'] = {"mfussenegger/nvim-dap", opt = true},
-        --[[
-            Treesitter
-        --]]
-        ['nvim-treesitter'] = {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
-        ['nvim-ts-autotag'] = {"windwp/nvim-ts-autotag", opt = true},
+    -- Show Indentations Lines
+    ['indent-blankline.nvim'] = {"lukas-reineke/indent-blankline.nvim", branch = 'lua' },
 
-        --[[
-            Explorer
-        --]]
 
-        -- nvim tree
-        ['nvim-tree.lua'] =  {"kyazdani42/nvim-tree.lua", opt = true},
 
-        --[[
-            LSP
-        ]]--
+    -- TODO Terminal (Toggle term)
+    
+	-- TODO Viewer & finder for LSP symbols and tags
 
-        --nvim-lspconfig
-        ['nvim-lspconfig'] =  {"neovim/nvim-lspconfig"},
+    -- TODO Minimap
 
-        ['lspsaga.nvim'] =  {"glepnir/lspsaga.nvim", opt = true},
+    -- Keybindings
+    -- Which Key
+    ['which-key.nvim'] = {"folke/which-key.nvim", opt = true},
 
-        ['nvim-lspinstall'] = {"kabouzeid/nvim-lspinstall", opt = true},
-        ['lsp_signature.nvim'] = {"ray-x/lsp_signature.nvim", opt = true},
-['lspkind-nvim'] = {"onsails/lspkind-nvim", opt = true},
-        --[[
-            AutoComplete
-        ]]--
 
-        ['nvim-compe'] = {"hrsh7th/nvim-compe", opt = true},
+    --[[------------]]--
+    --      GIT       --
+    --[[------------]]--
+    ['gitsigns.nvim'] = {"lewis6991/gitsigns.nvim", opt = true},
 
-        ['vim-vsnip'] = {"hrsh7th/vim-vsnip", opt = true},
+    --[[------------]]--
+    --      LSP       --
+    --[[------------]]--
 
-        ['friendly-snippets'] = {"rafamadriz/friendly-snippets", opt = true},
+    --nvim-lspconfig
+    ['nvim-lspconfig'] =  {"neovim/nvim-lspconfig"},
 
-        -- Auto Pairs
-        ['nvim-autopairs'] = {"windwp/nvim-autopairs", opt = true},
+    ['lspsaga.nvim'] =  {"glepnir/lspsaga.nvim", opt = true},
 
-        -- Comment
-        ['nvim-comment'] = {"terrortylor/nvim-comment", opt = true},
+    ['nvim-lspinstall'] = {"kabouzeid/nvim-lspinstall", opt = true},
+    ['lsp_signature.nvim'] = {"ray-x/lsp_signature.nvim", opt = true},
+    ['lspkind-nvim'] = {"onsails/lspkind-nvim", opt = true},
 
-        -- Format
-        ['format.nvim'] = {"lukas-reineke/format.nvim"}
+
+    --[[--------------]]--
+    --   AutoComplete   --
+    --[[--------------]]--
+    ['nvim-compe'] = {"hrsh7th/nvim-compe", opt = true},
+
+    ['vim-vsnip'] = {"hrsh7th/vim-vsnip", opt = true},
+
+    ['friendly-snippets'] = {"rafamadriz/friendly-snippets", opt = true},
+
+    -- Auto Pairs
+    ['nvim-autopairs'] = {"windwp/nvim-autopairs", opt = true},
+
+    -- Comment
+    ['nvim-comment'] = {"terrortylor/nvim-comment", opt = true},
+
+    -- Rainbow-ts-pairs
+    ['nvim-ts-rainbow'] = {'p00f/nvim-ts-rainbow'},
+
+    -- TODO Surround
+    ['vim-surround'] = { "tpope/vim-surround" },
+
+    --[[------------]]--
+    --     Finder     --
+    --[[------------]]--
+
+    -- Telescope
+    ['popup.nvim'] = {"nvim-lua/popup.nvim", opt = true},
+    ['plenary.nvim'] = {"nvim-lua/plenary.nvim", opt = true},
+    ['telescope.nvim'] = {"nvim-telescope/telescope.nvim", opt = true},
+    ['telescope-fzy-native.nvim'] = {"nvim-telescope/telescope-fzy-native.nvim", opt = true},
+
+    -- Debugging
+    ['nvim-dap'] = {"mfussenegger/nvim-dap", opt = true},
+
+    -- Format
+    ['format.nvim'] = {"lukas-reineke/format.nvim"},
+
+    --[[-------------]]--
+    --   Web-Related   --
+    --[[-------------]]--
+
+    -- colorizer
+    ['nvim-colorizer.lua'] = {'norcalli/nvim-colorizer.lua'}, 
+    -- REST Client
+    ['vim-dot-http'] = {'bayne/vim-dot-http'},
+    -- Emmet
+    ['emmet-vim'] = {'mattn/emmet-vim'},
+
 }
 
 

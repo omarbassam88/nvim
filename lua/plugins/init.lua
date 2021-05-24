@@ -36,13 +36,13 @@
 
 
 
-    -- TODO Terminal (Toggle term)
+    -- Terminal (Toggle term)
     ['nvim-toggleterm.lua'] = {'akinsho/nvim-toggleterm.lua'},
 
 	-- Viewer & finder for LSP symbols and tags
     ['symbols-outline.nvim'] = {'simrat39/symbols-outline.nvim'},
 
-    -- TODO Minimap
+    -- Minimap (Requires code-minimap)
     ['minimap.vim'] = {'wfxr/minimap.vim'},
 
     -- Keybindings
@@ -115,7 +115,7 @@
     --[[-------------]]--
 
     -- colorizer
-    ['nvim-colorizer.lua'] = {'norcalli/nvim-colorizer.lua'}, 
+    ['nvim-colorizer.lua'] = {'norcalli/nvim-colorizer.lua'},
     -- REST Client
     ['vim-dot-http'] = {'bayne/vim-dot-http'},
     -- Emmet

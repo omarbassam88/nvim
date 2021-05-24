@@ -29,6 +29,11 @@ require('format').setup({
 		},
 	},
 	lua = {
+        {
+            cmd = {
+                "lua-format -i --no-keep-simple-function-one-line --column-limit=120"
+            }
+        },
 		{
 			cmd = {
 				function(file)

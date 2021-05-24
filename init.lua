@@ -29,6 +29,7 @@ require('lsp')
 require('plugins.lspinstall')
 require('lsp.lua-ls')
 require('lsp.python-ls')
+require('lsp.efm-general-ls')
 
 -- Load keymappings
 require('ovim.keymappings')

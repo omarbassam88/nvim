@@ -17,6 +17,7 @@ require('plugins.configs.compe')
 require('plugins.configs.comment')
 require('plugins.configs.format')
 require('plugins.configs.colorizer')
+require('plugins.configs.symbols')
 
 require('plugins.configs.gitsigns')
 

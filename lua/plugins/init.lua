@@ -37,10 +37,13 @@
 
 
     -- TODO Terminal (Toggle term)
-    
-	-- TODO Viewer & finder for LSP symbols and tags
+    ['nvim-toggleterm.lua'] = {'akinsho/nvim-toggleterm.lua'},
+
+	-- Viewer & finder for LSP symbols and tags
+    ['symbols-outline.nvim'] = {'simrat39/symbols-outline.nvim'},
 
     -- TODO Minimap
+    ['minimap.vim'] = {'wfxr/minimap.vim'},
 
     -- Keybindings
     -- Which Key
@@ -55,6 +58,7 @@
 
     -- integration with LazyGit
     ['lazygit.nvim'] = {'kdheepak/lazygit.nvim'},
+
     --[[------------]]--
     --      LSP       --
     --[[------------]]--
@@ -87,7 +91,7 @@
     -- Rainbow-ts-pairs
     ['nvim-ts-rainbow'] = {'p00f/nvim-ts-rainbow'},
 
-    -- TODO Surround
+    -- Surround
     ['vim-surround'] = { "tpope/vim-surround" },
 
     --[[------------]]--
@@ -162,8 +166,6 @@ return require("packer").startup(
             use(options)
             require_plugin(plugin)
         end
-
-
 
 end
 )

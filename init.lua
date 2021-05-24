@@ -24,15 +24,16 @@ require('plugins.configs.gitsigns')
 require('plugins.configs.autopairs')
 require('plugins.configs.ts-rainbow')
 require('plugins.configs.indent-blankline')
+
 -- LSP
 require('lsp')
 require('plugins.lspinstall')
 require('lsp.lua-ls')
 require('lsp.python-ls')
-require('lsp.efm-general-ls')
 
 -- Load keymappings
 require('ovim.keymappings')
 require('plugins.configs.whichkey')
+
 -- Extra Message to confirm that everything loaded.
 print('O-Vim Loaded Successfully')

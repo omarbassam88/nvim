@@ -50,8 +50,11 @@
     --[[------------]]--
     --      GIT       --
     --[[------------]]--
+    -- gitsigns
     ['gitsigns.nvim'] = {"lewis6991/gitsigns.nvim", opt = true},
 
+    -- integration with LazyGit
+    ['lazygit.nvim'] = {'kdheepak/lazygit.nvim'},
     --[[------------]]--
     --      LSP       --
     --[[------------]]--

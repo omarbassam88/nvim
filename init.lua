@@ -18,7 +18,6 @@ require('plugins.configs.comment')
 require('plugins.configs.format')
 require('plugins.configs.colorizer')
 require('plugins.configs.symbols')
-require("plugins.configs.flutter-tools")
 
 require('plugins.configs.gitsigns')
 
@@ -32,6 +31,7 @@ require('plugins.lspinstall')
 require('lsp.lua-ls')
 require('lsp.python-ls')
 require('lsp.dart-ls')
+require("plugins.configs.flutter-tools")
 
 -- Load keymappings
 require('ovim.keymappings')

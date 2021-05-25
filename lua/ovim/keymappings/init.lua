@@ -82,7 +82,7 @@ Map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 --   which-key Mappings   --
 -- ]]--------------------[[--
 
-local opts = {
+local wk_opts = {
     mode = "n", -- NORMAL mode
     prefix = "<leader>",
     buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
@@ -173,12 +173,12 @@ local mappings = {
     },
     t = {
         name = '+Toggle',
-        s = {':Dashboard<CR>', 'Open start screen'},
         c = {':Telescope colorscheme<CR>', 'Change colorscheme'},
         e = {':NvimTreeToggle<CR>', 'Toggle Tree Explorer'},
         m = {':MinimapToggle<CR>', 'Toggle Minimap'},
-        S = {':SymbolsOutline<CR>', 'Toggle Symbols view'},
-        t = {':ToggleTerm<CR>', 'Toggle terminal'}
+        s = {':SymbolsOutline<CR>', 'Toggle Symbols view'},
+        t = {':ToggleTerm<CR>', 'Toggle terminal'},
+        S = {':Dashboard<CR>', 'Open start screen'},
     },
 
     s = {
@@ -198,4 +198,4 @@ local mappings = {
 }
 
 local wk = require("which-key")
-wk.register(mappings, opts)
+wk.register(mappings,wk_opts)

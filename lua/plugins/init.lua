@@ -121,6 +121,12 @@
     -- Emmet
     ['emmet-vim'] = {'mattn/emmet-vim'},
 
+    --[[-------------]]--
+    --     Flutter     --
+    --[[-------------]]--
+    ['flutter-tools.nvim'] = {'akinsho/flutter-tools.nvim'},
+
+
 }
 
 

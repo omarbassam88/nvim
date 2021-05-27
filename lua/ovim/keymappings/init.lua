@@ -78,6 +78,13 @@ Map('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
 Map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
 Map('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
 
+-- ToggleTerm
+Map('n', '<C-t>', ':ToggleTerm<CR>', opts)
+Map('t', '<C-t>', '<Cmd>ToggleTerm<CR>', opts)
+
+-- Flutter Tools
+Map('n', '<leader>F', ':lua require("telescope").load_extension("flutter").commands()<CR>', opts)
+
 -- ]]--------------------[[--
 --   which-key Mappings   --
 -- ]]--------------------[[--
@@ -95,6 +102,7 @@ local mappings = {
     ["/"] = "Comment",
     ["e"] = "Explorer",
     ["h"] = "No Highlight",
+    ["F"] = "Flutter Tools",
     w = {
         name = '+Window',
         o = {':only<CR>', 'Close all other windows'},
@@ -178,7 +186,7 @@ local mappings = {
         m = {':MinimapToggle<CR>', 'Toggle Minimap'},
         s = {':SymbolsOutline<CR>', 'Toggle Symbols view'},
         t = {':ToggleTerm<CR>', 'Toggle terminal'},
-        S = {':Dashboard<CR>', 'Open start screen'},
+        S = {':Dashboard<CR>', 'Open start screen'}
     },
 
     s = {
@@ -198,4 +206,4 @@ local mappings = {
 }
 
 local wk = require("which-key")
-wk.register(mappings,wk_opts)
+wk.register(mappings, wk_opts)

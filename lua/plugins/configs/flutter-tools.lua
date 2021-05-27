@@ -8,5 +8,10 @@ require("flutter-tools").setup {
     outline = {
         open_cmd = "30vnew" -- command to use to open the outline buffer
     },
-    lsp = {on_attach = require('lspconfig').on_attach}
+    closing_tags = {
+        highlight = "ErrorMsg", -- highlight for the closing tag
+        prefix = ">", -- character to use for close tag e.g. > Widget
+        enabled = true -- set to false to disable
+    },
+    -- lsp = {on_attach = require('lsp').on_attach}
 }

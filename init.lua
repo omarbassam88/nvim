@@ -30,6 +30,7 @@ require('lsp')
 require('plugins.lspinstall')
 require('lsp.lua-ls')
 require('lsp.python-ls')
+require('lsp.js-ts-ls')
 -- require('lsp.dart-ls')
 require("plugins.configs.flutter-tools")
 
